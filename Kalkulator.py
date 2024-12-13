@@ -54,10 +54,15 @@ def konversisuhu():
     unitakhir = input("Konversi ke mana ?\n(C, F, K, R)\n").lower()
 
     if unitawal == "c":
-
-    if unitawal == "f":
-    if unitawal == "k":
-    if unitawal == "r":
+        print
+    elif unitawal == "f":
+        print
+    elif unitawal == "k":
+        print
+    elif unitawal == "r":
+        print
+    else:
+        print
 
 
 
