@@ -15,7 +15,6 @@ def kalkulator():
         print("Hasilnya adalah... ", x / y)
     else:
         print("Bilangan bukan angka atau operasi tidak dikenal.")
-
 def pengecekangka():
     print("Kalkulator Simpel Ganjil / Genap \nMenentukan apakah angka yang diinput genap atau ganjil")
     x = int(input("Input angka yang ingin dicek:\n"))
@@ -26,7 +25,6 @@ def pengecekangka():
         print("Angka", x, "adalah angka genap")
     else:
         print("Bilangan bukan angka.")
-
 def vokalkonsonan():
     x = input("Pengecek vokal dalam alfabet\nMasukan huruf yang akan dicek:\n").upper()
     if len(x) == 1:
@@ -41,7 +39,6 @@ def vokalkonsonan():
             print("Simbol", x, "bukanlah alfabet")
     else:
         print("Input", x, "terbilang lebih dari 1 digit, mohon ulangi operasi lagi")
-
 def konversisuhu():
     celcius = suhu
     fahrenheit = (9/5 * suhu) + 32
