@@ -43,7 +43,6 @@ def vokalkonsonan():
         print("Input", x, "terbilang lebih dari 1 digit, mohon ulangi operasi lagi")
 
 def konversisuhu():
-    #Suhu awal -> Konversi ke C -> Konversi tujuan suhu
     celcius = suhu
     fahrenheit = (9/5 * suhu) + 32
     kelvin = celcius + 273.15
@@ -52,17 +51,6 @@ def konversisuhu():
     suhu = float(input("Masukan suhu anda\n"))
     unitawal = input("Masukan unit suhu anda\n(C, F, K, R)\n").lower()
     unitakhir = input("Konversi ke mana ?\n(C, F, K, R)\n").lower()
-
-    if unitawal == "c":
-        print
-    elif unitawal == "f":
-        print
-    elif unitawal == "k":
-        print
-    elif unitawal == "r":
-        print
-    else:
-        print
 
 rawr = input("\nPilih Kalkulatornya :\n1. Kalkulator Biasa\n2. Kalkulator Pengecek Angka Genap atau Ganjil\n3. Pengecek huruf vokal dan konsonan\n4. Pengecek suhu\n")
 if rawr == "1":
