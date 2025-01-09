@@ -7,6 +7,14 @@ print("\nTek kotek kotek kotek\n"
           "Tek kotek kotek kotek\n"
           "Anak ayam turun berkotek")
 
+for ayam in reversed(jumlah_ayam):
+    print(f"\nAnak ayam turunlah {ayam}")
+    if ayam != "satu":
+        print(f"Mati satu tinggal {jumlah_ayam[jumlah_ayam.index(ayam) - 1]}")
+    else:
+        print("Mati satu tinggal induknya\n")
+    time.sleep(0.5)
+
 # jumlah = 10
 # for ayam in range(jumlah):
 #     print(f"\nAnak ayam turunlah {jumlah}")
@@ -16,11 +24,3 @@ print("\nTek kotek kotek kotek\n"
 #     elif jumlah == 0:
 #         print("Mati Satu tinggal Induknya\n")
 #     time.sleep(0.5)
-
-for ayam in reversed(jumlah_ayam):
-    print(f"\nAnak ayam turunlah {ayam}")
-    if ayam != "satu":
-        print(f"Mati satu tinggal {jumlah_ayam[jumlah_ayam.index(ayam) - 1]}")
-    else:
-        print("Mati satu tinggal induknya\n")
-    time.sleep(0.5)
