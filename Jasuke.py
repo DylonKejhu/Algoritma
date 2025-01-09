@@ -49,13 +49,11 @@ def Jasuke(Jagung, SKM, Keju, Gula, Garam, Mentega):
     elif Mentega > 1:
         print("Mentega Kelebihan ! !")
         
-    
-    
+
 A = int(input("Masukan Jagung (Buah) : "))
 B = int(input("Masukan SKM (ml) : "))
 C = int(input("Masukan Keju (gram) : "))
 D = int(input("Masukan Gula (sdm) : "))
 E = int(input("Masukan Garam (sdt) : "))
 F = int(input("Masukan Mentega (sdt) : "))
-
 Jasuke(A, B, C, D, E, F)
