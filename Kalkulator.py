@@ -67,6 +67,13 @@ def konversisuhu():
         suhuakhir = (suhu * 9/5) + 491.67
 
     print(f"Suhu adalah {suhuakhir}")
+def looping():
+    for i in range(100):
+        if i == 100:
+            break  # Stop the loop when i is 5
+        if i % 2 == 0:
+            continue  # Skip even numbers
+    print(i)
 
 rawr = input("\nPilih Kalkulatornya :\n1. Kalkulator Biasa\n2. Kalkulator Pengecek Angka Genap atau Ganjil\n3. Pengecek huruf vokal dan konsonan\n4. Pengecek suhu\n")
 if rawr == "1":
@@ -77,5 +84,7 @@ elif rawr == "3":
     vokalkonsonan()
 elif rawr == "4":
     konversisuhu()
+elif rawr == "5":
+    looping()
 else:
     print("Pilihan anda tidak valid. Silakan coba lagi yaa.")
