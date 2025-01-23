@@ -1,7 +1,3 @@
-#Dillon Christiano
-#2401010536
-
-
 Banyak_Data = int(input("\nBanyak data ? "))  # memasukan banyaknya data yang ada
 Data = [] #definisi list python
 for nambah in range(Banyak_Data): # pengulangan for sebanyak range function yang berisi variabel dari inputan integer Banyak_Data
