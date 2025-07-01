@@ -1,97 +1,90 @@
-# Class Node
-class Node:
-    # Inisialisasi node
-    def __init__(self, data, prev=None, next=None):
+class Node() :
+    def __init__(self, data = None, next = None, prev = None):
         self.data = data
-        self.prev = prev
         self.next = next
+        self.prev = prev
 
-# Class untuk Doubly Linked List
-class DoubleList:
+class LinkedList():
     def __init__(self):
         self.head = None
         self.tail = None
 
-    # Menambah node
-    def menuTambah(self):
-        temp = int(input('Masukkan data baru = '))
-        new_node = Node(temp)
-
-        # Memeriksa apakah list kosong
-        if self.head is None:
-            # Menunjuk HEAD dan TAIL ke node baru
-            self.head = self.tail = new_node
-        else:
-            new_node.prev = self.tail
-            self.tail.next = new_node
+    def insert_head(self, data):
+        new_node = Node(data)
+        if self.head is None or self.tail is None:
+            self.head = new_node
             self.tail = new_node
+        else:
+            new_node.next = self.head #insert ke kepala
+            self.tail.prev = new_node
+            self.head = new_node #tambah pergeseran kepala
 
-    # Menghapus node
-    def menuHapus(self):
-        temp = int(input('Masukkan data yang akan dihapus = '))
+    def insert_tail(self, data):
+        new_node = Node(data)
+        if self.head is None or self.tail is None:
+            self.head = new_node
+            self.tail = new_node
+        else:
+            new_node.prev = self.tail #insert ke ekor
+            self.tail.next = new_node
+            self.tail = new_node #tambah pergeseran ekor
 
-        # Membuat pointer yang menunjuk ke node pertama
+    def remove_head(self):
+        current_head = self.head
+        self.head = self.head.next
+        self.head.prev = None
+
+        # current_head.next = None
+        # current_head = None
+
+
+    def remove_tail(self):
+        current_tail = self.tail
+        self.tail = self.tail.prev
+        self.tail.next = None
+
+        # current_tail.prev = None
+        # current_tail = None
+
+    def remove_node(self, data):
         current_node = self.head
-
-        # Melakukan perulangan saat list tidak kosong
         while current_node is not None:
-            if current_node.data == temp:
-                # Jika node yang dicari berada pada elemen terakhir
-                if current_node.next is None:
-                    if current_node.prev:
-                        current_node.prev.next = None
-                        self.tail = current_node.prev
-                    else:
-                        self.head = self.tail = None
-                # Jika node yang dicari berada di tengah
-                elif current_node.prev is not None:
-                    current_node.prev.next = current_node.next
-                    current_node.next.prev = current_node.prev
-                # Jika node yang dicari berada pada elemen pertama
-                else:
-                    self.head = current_node.next
-                    if self.head:
-                        self.head.prev = None
-                return
-            current_node = current_node.next
-
-        print("Data tidak ditemukan.")
-
-    # Menampilkan isi dari list
-    def menuTampil(self):
-        print("Tampilkan list data:")
-        current_node = self.head
-
-        # Menampilkan data beserta data sebelum dan sesudahnya
-        while current_node is not None:
-            prev_data = current_node.prev.data if current_node.prev else None
-            next_data = current_node.next.data if current_node.next else None
-            print(f"Prev: {prev_data} | Data: {current_node.data} | Next: {next_data}")
-            current_node = current_node.next
-
-    # Menampilkan menu program
-    def menuUmum(self):
-        while True:
-            print("\nPilih menu yang anda inginkan")
-            print("==============================")
-            print("1 : Tambah data ke linked list")
-            print("2 : Hapus data di linked list")
-            print("3 : Tampilkan data di linked list")
-            print("4 : Keluar Program")
-            pilihan = input("Masukkan Menu yang anda pilih = ")
-
-            if pilihan == "1":
-                self.menuTambah()
-            elif pilihan == "2":
-                self.menuHapus()
-            elif pilihan == "3":
-                self.menuTampil()
-            elif pilihan == "4":
-                print("Program selesai.")
+            if current_node.data == data:
+                # lakukan penghapusan
+                current_node.prev.next = current_node.next
+                current_node.next.prev = current_node.prev
+                print(data, "removed")
                 break
-            else:
-                print("Pilihan tidak valid.")
+            # optional
+            # current_node.next = None
+            # current_node.prev = None
+        else:
+            current_node = current_node.next
 
-if __name__ == "__main__":
-    d = DoubleList()
-    d.menuUmum()
+
+    def print_head(self):
+        current_node = self.head
+        while current_node is not None:
+            print(current_node.data)
+            current_node = current_node.next
+
+    def print_tail(self):
+        current_node = self.tail
+        while current_node is not None:
+            print(current_node.data)
+            current_node = current_node.prev
+
+
+X = LinkedList()
+X.insert_head("Tugas Pertama")
+X.insert_head("Tugas Kedua")
+X.insert_tail("Tugas Ketiga")
+X.remove_head()
+X.remove_tail()
+
+
+print("------------------------")
+print("From Head:")
+X.print_head()
+print("From Tail:")
+X.print_tail()
